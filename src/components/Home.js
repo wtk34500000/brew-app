@@ -1,9 +1,23 @@
-import React from 'react';
+import React, {useState}from 'react';
+import { withRouter } from 'react-router-dom';
 
-const Home = () =>{
+const Home = ({setTerm, history}) =>{
+
+    const [input, setInput]=useState("")
+
+    const handleOnSubmit = (e)=>{
+        e.preventDefault()
+        console.log("i am here")
+        setTerm(input)
+        history.push('/breweries')
+    }
+
     return (
-        <div>
-            Hello
+        <div >
+            Enter a City: <input type="text" value={input} onChange={(e)=> setInput(e.target.value)} />
+            <input type="button" value="Search" onClick={handleOnSubmit}/>
         </div>
     )
 }
+
+export default withRouter(Home);
