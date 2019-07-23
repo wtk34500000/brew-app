@@ -3,7 +3,7 @@ import {Route, Switch} from 'react-router-dom';
 import './App.css';
 
 import BreweriesList from "./components/BreweriesList";
-import DisplayBrewInfo from './components/DisplayBrewInfo';
+import BreweryDetail from './components/BreweryDetail';
 import Home from './components/Home';
 
 const App= ()=> {
@@ -30,7 +30,7 @@ const App= ()=> {
   return (
     <div className="App">
       <Switch>
-        <Route path='/breweries/:id' render={()=> <DisplayBrewInfo brew={brewDetail}/>}/>
+        <Route path='/breweries/:id' render={()=> <BreweryDetail brew={brewDetail}/>}/>
         <Route path='/breweries' render={()=> <BreweriesList data={data} setBrewDetail={setBrewDetail}/>}/>
         <Route path='/' render={()=> <Home setTerm={setTerm}/>}/>
       </Switch>
