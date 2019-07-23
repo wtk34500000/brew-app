@@ -3,10 +3,10 @@ import GoogleMapReact from 'google-map-react';
 
 
 const GoogleMap=({brew})=>{
-    
+
     const API_key=process.env.REACT_APP_GOOGLE_API_KEY
 
-    const AnyReactComponent = ({ text }) => (
+    const Marker = ({ text }) => (
         <div style={{
           color: 'white', 
           background: 'red',
@@ -27,11 +27,11 @@ const GoogleMap=({brew})=>{
             <section style={{border:"1px solid black", width: '100%', height: '400px'}}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: API_key}}
-                    // defaultCenter={{lat: 59.95, lng:30.33}}
+                    defaultCenter={{lat: 59.95, lng:30.33}}
                     center={{lat: parseInt(brew.latitude), lng: parseInt(brew.longitude)}}
-                    defaultZoom={11}
+                    defaultZoom={8}
                 >
-                <AnyReactComponent
+                <Marker
                     lat={brew.latitude} 
                     lng={brew.longitude} 
                     text={brew.name} 
