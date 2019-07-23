@@ -5,7 +5,6 @@ const BreweryDetail = ({brew, setBrewDetail, history}) =>{
     
     const handleOnClick = ()=>{
         setBrewDetail(brew)
-        console.log(history)
         history.push(`/breweries/${brew.id}`)
     }
 

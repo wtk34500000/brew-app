@@ -7,7 +7,6 @@ const Home = ({setTerm, history}) =>{
 
     const handleOnSubmit = (e)=>{
         e.preventDefault()
-        console.log("i am here")
         setTerm(input)
         history.push('/breweries')
     }
