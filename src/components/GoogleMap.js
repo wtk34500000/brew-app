@@ -28,13 +28,13 @@ const GoogleMap=({brew})=>{
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: API_key}}
                     defaultCenter={{lat: 59.95, lng:30.33}}
-                    center={{lat: parseInt(brew.latitude), lng: parseInt(brew.longitude)}}
+                    center={{lat: brew.latitude? parseInt(brew.latitude): 59.95, lng: brew.latitude? parseInt(brew.longitude):30.33}}
                     defaultZoom={8}
                 >
                 <Marker
-                    lat={brew.latitude} 
-                    lng={brew.longitude} 
-                    text={brew.name} 
+                    lat={brew.latitude? brew.latitude: 59.95} 
+                    lng={brew.longitude? brew.longitude: 30.33} 
+                    text={brew.latitude && brew.longitude? brew.name: "N/A"} 
                 />
                 </GoogleMapReact>
             </section> 

@@ -11,9 +11,13 @@ const BreweryDetail = ({brew, setBrewDetail, history}) =>{
 
     return (
         <div>
+            <section>
+                {history.location.pathname ===`/breweries/${brew.id}`? <button onClick={()=>history.goBack()}> GO BACK</button>: ""}
+            </section>
             <section 
                 style={{"border":"1px solid black"}}
-                onClick={()=> handleOnClick()}
+                onClick={history.location.pathname ===`/breweries/${brew.id}`? null : ()=>handleOnClick()}
+                // onClick={()=> handleOnClick()}
             >
                 <h3>Name: {brew.name}</h3>
                 <p>Brewery_type: {brew.brewery_type}</p>
