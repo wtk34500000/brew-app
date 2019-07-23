@@ -1,7 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
-
 const GoogleMap=({brew})=>{
 
     const API_key=process.env.REACT_APP_GOOGLE_API_KEY
@@ -34,7 +33,7 @@ const GoogleMap=({brew})=>{
                 <Marker
                     lat={brew.latitude? brew.latitude: 59.95} 
                     lng={brew.longitude? brew.longitude: 30.33} 
-                    text={brew.latitude && brew.longitude? brew.name: "N/A"} 
+                    text={brew.latitude && brew.longitude? brew.id: "N/A"} 
                 />
                 </GoogleMapReact>
             </section> 

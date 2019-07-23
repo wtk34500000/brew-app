@@ -28,7 +28,7 @@ const App= ()=> {
   },[term])
 
   return (
-    <div className="App">
+    <div className="App mt-3">
       <Switch>
         <Route path='/breweries/:id' render={()=> <BreweryDetail brew={brewDetail}/>}/>
         <Route path='/breweries' render={()=> <BreweriesList data={data} setBrewDetail={setBrewDetail}/>}/>
