@@ -17,7 +17,14 @@ const App= ()=> {
   
   useEffect(()=>{
     if(term !== ""){
-      fetch(`https://api.openbrewerydb.org/breweries?by_city=${term}`)
+      // fetch(`https://api.openbrewerydb.org/breweries?by_city=${term}`)
+      fetch('https://api-brew-backend.herokuapp.com/breweries',{
+        method: 'post',
+        headers: {
+          'content-type':"application/json"
+        },
+        body:JSON.stringify({"term": term})
+      })
       .then(req =>{
         if(req.ok){
           return req.json()
@@ -36,7 +43,7 @@ const App= ()=> {
         <Home setTerm={setTerm}/>
       <Switch>
         <Route path='/breweries/:id' render={()=> <BreweryDetail brew={brewDetail}/>}/>
-        <Route path='/breweries' render={data && data.length>0? ()=> <BreweriesList data={data} setBrewDetail={setBrewDetail}/>:()=><h1>No Result, Invalid City Name</h1>}/>
+        <Route path='/breweries' render={data && data.length>0? ()=> <BreweriesList data={data} setBrewDetail={setBrewDetail}/>:()=><h1>Loading.... or Invalid city name!</h1>}/>
         <Route path='/' render={()=> <Carousel />} />
       </Switch>
     </div>

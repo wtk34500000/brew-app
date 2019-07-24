@@ -12,11 +12,6 @@ const Home = ({setTerm, history}) =>{
     }
 
     return (
-        // <div >
-        //     Enter a City: <input type="text" value={input} onChange={(e)=> setInput(e.target.value)} />
-        //     <input type="button" value="Search" onClick={handleOnSubmit}/>
-        // </div>
-
         <nav className="container navbar navbar-light bg-dark">
             <a href="/"className="navbar-brand text-white font-weight-bold">Brewery Finder</a>
             <form className="form-inline">
