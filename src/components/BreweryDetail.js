@@ -3,7 +3,10 @@ import { withRouter } from 'react-router-dom';
 import GoogleMap from './GoogleMap';
 
 const BreweryDetail = ({brew, setBrewDetail, history}) =>{
-    const isPathTrue=history.location.pathname ===`/breweries/${brew.id}`
+
+    const {id, name, brewery_type, street, city, postal_code, website_url}=brew;
+
+    const isPathTrue=history.location.pathname ===`/breweries/${id}`;
 
     const handleOnClick = ()=>{
         setBrewDetail(brew)
@@ -20,14 +23,14 @@ const BreweryDetail = ({brew, setBrewDetail, history}) =>{
                 onClick={isPathTrue? null : ()=>handleOnClick()}
 
             >
-                    <h3>{brew.name}</h3>
-                    <p>Brewery_type: {brew.brewery_type}</p>
-                    <p>Address1: {brew.street} </p>
-                    <p>Address2: {brew.city}, {brew.state} {brew.postal_code}</p>
-                    <p>Website: <a href={brew.website_url} target="_blank" rel="noopener noreferrer" >{brew.website_url}</a></p>
+                    <h3>{name}</h3>
+                    <p>Brewery_type: {brewery_type}</p>
+                    <p>Address1: {street} </p>
+                    <p>Address2: {city}, {brew.state} {postal_code}</p>
+                    <p>Website: <a href={website_url} target="_blank" rel="noopener noreferrer" >{website_url}</a></p>
             </section>
             <section className="mt-2">
-              {history.location.pathname ===`/breweries/${brew.id}`? <GoogleMap brew ={brew}/>: ""}
+              {history.location.pathname ===`/breweries/${id}`? <GoogleMap brew ={brew}/>: ""}
             </section>
         </div>
     )

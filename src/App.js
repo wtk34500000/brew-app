@@ -15,10 +15,13 @@ const App= ()=> {
 
   const [term, setTerm] = useState("")
   
+  //post request, retrieving data from backend
   useEffect(()=>{
     if(term !== ""){
-      // fetch(`https://api.openbrewerydb.org/breweries?by_city=${term}`)
-      fetch('https://api-brew-backend.herokuapp.com/breweries',{
+
+      const url='https://api-brew-backend.herokuapp.com/breweries' || 'http://localhost:3001/breweries'
+
+      fetch(url, {
         method: 'post',
         headers: {
           'content-type':"application/json"

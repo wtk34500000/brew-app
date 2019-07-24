@@ -1,8 +1,8 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import BreweryDetail from '../components/BreweryDetail'
 
-const BreweriesList = ({data, setBrewDetail, history})=>{
+const BreweriesList = ({data, setBrewDetail})=>{
     const listArr = data.map(brew => <BreweryDetail key={brew.id} setBrewDetail={setBrewDetail} brew={brew}/>)
 
     return (
