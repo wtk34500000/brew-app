@@ -21,7 +21,6 @@ const BreweryDetail = ({brew, setBrewDetail, history}) =>{
             <section 
                 className={isPathTrue? "border":"border brew-card"}
                 onClick={isPathTrue? null : ()=>handleOnClick()}
-
             >
                     <h3>{name}</h3>
                     <p>Brewery_type: {brewery_type}</p>
