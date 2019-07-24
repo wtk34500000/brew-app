@@ -5,35 +5,41 @@ const GoogleMap=({brew})=>{
 
     const API_key=process.env.REACT_APP_GOOGLE_API_KEY
 
+    console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+
+    const {latitude, longitude, name} =brew
+
     const Marker = ({ text }) => (
-        <div style={{
-          color: 'white', 
-          background: 'red',
-          padding: '15px 10px',
-          display: 'inline-flex',
-          textAlign: 'center',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '100%',
-          transform: 'translate(-50%, -50%)'
-        }}>
+        <div className="text-white bg-danger p-2 d-inline-flex text-center text-justify rounded-circle" 
+        // style={{
+        //   color: 'white', 
+        //   background: 'red',
+        //   padding: '15px 15px',
+        //   display: 'inline-flex',
+        //   textAlign: 'center',
+        //   alignItems: 'center',
+        //   justifyContent: 'center',
+        //   borderRadius: '100%',
+        //   transform: 'translate(-50%, -50%)'
+        // }}
+        >
           {text}
         </div>
       );
 
       return (
           <div>
-            <section style={{border:"1px solid black", width: '100%', height: '400px'}}>
+            <section className="border border-dark" style={{width: '100%', height: '58vh'}}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: API_key}}
                     defaultCenter={{lat: 59.95, lng:30.33}}
-                    center={{lat: brew.latitude? parseInt(brew.latitude): 59.95, lng: brew.latitude? parseInt(brew.longitude):30.33}}
+                    center={{lat: latitude? parseInt(latitude): 59.95, lng: longitude? parseInt(longitude):30.33}}
                     defaultZoom={8}
                 >
                 <Marker
-                    lat={brew.latitude? brew.latitude: 59.95} 
-                    lng={brew.longitude? brew.longitude: 30.33} 
-                    text={brew.latitude && brew.longitude? brew.id: "N/A"} 
+                    lat={latitude? latitude: 59.95} 
+                    lng={longitude? longitude: 30.33} 
+                    text={latitude && longitude? name: "N/A"} 
                 />
                 </GoogleMapReact>
             </section> 

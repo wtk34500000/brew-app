@@ -12,10 +12,18 @@ const Home = ({setTerm, history}) =>{
     }
 
     return (
-        <div >
-            Enter a City: <input type="text" value={input} onChange={(e)=> setInput(e.target.value)} />
-            <input type="button" value="Search" onClick={handleOnSubmit}/>
-        </div>
+        // <div >
+        //     Enter a City: <input type="text" value={input} onChange={(e)=> setInput(e.target.value)} />
+        //     <input type="button" value="Search" onClick={handleOnSubmit}/>
+        // </div>
+
+        <nav className="container navbar navbar-light bg-dark">
+            <a href="/"className="navbar-brand text-white font-weight-bold">Brewery Finder</a>
+            <form className="form-inline">
+                <input className="form-control mr-sm-2" type="search" value={input} placeholder="Search by U.S Cities" aria-label="Search" onChange={(e)=> setInput(e.target.value)}/>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={handleOnSubmit}>Search</button>
+            </form>
+        </nav>
     )
 }
 
