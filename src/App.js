@@ -35,7 +35,7 @@ const App= ()=> {
           throw Error(req.statusText)
         }  
       })
-      .then(result => setData(result))
+      .then(result => setData(result.filter(brew => brew.latitude!==null && brew.longitude!==null)))
       .catch(err=>console.log(err))
     }
     

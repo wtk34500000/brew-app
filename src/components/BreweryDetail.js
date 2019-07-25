@@ -26,7 +26,7 @@ const BreweryDetail = ({brew, setBrewDetail, history}) =>{
                     <p>Brewery_type: {brewery_type}</p>
                     <p>Address1: {street} </p>
                     <p>Address2: {city}, {brew.state} {postal_code}</p>
-                    <p>Website: <a href={website_url} target="_blank" rel="noopener noreferrer" >{website_url}</a></p>
+                    <p>Website: <a href={website_url} target="_blank" rel="noopener noreferrer" >{website_url}</a></p>   
             </section>
             <section className="mt-2">
               {history.location.pathname ===`/breweries/${id}`? <GoogleMap brew ={brew}/>: ""}
