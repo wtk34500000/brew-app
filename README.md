@@ -5,7 +5,7 @@
 # Demo
 <a href="https://breweryfinderapp.herokuapp.com/" target="_blank">LIVE DEMO</a>
 
-#Image
+# Image
 ![Brewery Finder](https://github.com/wtk34500000/brew-app/blob/master/src/image/brew-app.png)
 
 # Setup
