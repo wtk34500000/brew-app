@@ -21,3 +21,12 @@
 
 # Created by
 <p>WeiJun Huang <a href="https://github.com/wtk34500000">https://github.com/wtk34500000</a></p>
+
+
+## Work Orders
+Work orders application is a powerful, easy-to-use cloud-based computerized management solution for wide range of industries.  It helps organizations manage their assets, maintenance, inventory, purchasing and keeping track with schedule.
+
+
+## Installation
+* run `npm install`
+* then run `npm start`
