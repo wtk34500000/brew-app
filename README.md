@@ -1,6 +1,6 @@
 # Brewery App
 
-<p>A simple brewery finder applcation</p>
+<p>A simple brewery finder application</p>
 
 # Demo
 <a href="https://breweryfinderapp.herokuapp.com/" target="_blank">LIVE DEMO</a>
